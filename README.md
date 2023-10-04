@@ -1,283 +1,71 @@
-# Phase 2 Project Description
+# King County Housing Data Analysis
 
-Another module down - you're almost half way there!
+**Author**: Andre Layton
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-v2-5/main/halfway-there.gif)
+GitHub: @therookiescientist-andre
 
-All that remains in Phase 2 is to put your newfound data science skills to use with a large project!
+## Overview
 
-In this project description, we will cover:
+  Microsoft is creating a new movie studio division in an effort to compete with other big companies, like Apple and Amazon, that have been successfully putting out diverse media content. This project aims to analyze movie data from various sources and recommend the best type of film to create for the studio's initial content. The main focus behind the analysis is seeing which films are best to begin creating by calculating and comparing the returns on investment (ROI), measured in percentages. During the course of the analysis, the comparison shifted from both Domestic and Worldwide ROIs to solely on a worldwide level due to the size of the company and the competition. In addition, while a majority of the movies from The Numbers's movie budget dataset fell under Action, Comedy, Drama, or Adventure genres, which are the four most frequent genres in order, War and Mystery movies yielded the highest median ROIs, both domestically and worldwide. However, those genres were lacking enough records to draw conclusions from, shown through the high error bars in both visuals for each genre; as such, I focus on the genres with low error margins (like the top four mentioned earlier), and the results confirm Adventure as the best genre to begin with for global success and profit. To be more precise, I suggest merging genres to create an Adventure-Comedy film, in order to draw from both markets and audiences. Adventure films, on average, require a $70 million budget, but I am suggesting $100 million, at minimum, upwards to approximately $104 million, to generate triple the budget. The film itself should run between 95-110 minutes, which is significant in determing studio and production costs. 
+  
+## Business Problem
 
-* Project Overview: the project goal, audience, and dataset
-* Deliverables: the specific items you are required to produce for this project
-* Grading: how your project will be scored
-* Getting Started: guidance for how to begin working
+  Microsoft has created a movie studio; however, the executives are stuck on what type of content to begin creating and investing in. In order to compete with companies who have been dominating the space thus far, I am looking at the film genres that provide the highest return on investment (ROI), both domestically and globally, in order to recommend the best type of film for Microsoft to begin creating. The significance in selecting a genre with a high ROI lies in the impact it could have on future films - if the genre we recommend produces a high ROI for Microsoft, it encourages investors and invites conversations for further film production. It also assures the executives that Microsoft can compete in this space/industry.
+***
 
-## Project Overview
+## Data & Methods
 
-For this project, you will use multiple linear regression modeling to analyze house sales in a northwestern county.
+  The data analysed came from both the IMDb and The Numbers websites. IMDb is a popular worldwide online database of infomation relating to all movies, television programs, video games and streaming content online. The Numbers, on the other hand, is a popular website that displays financial information related to films such as budget, domestic gross, worldwide gross, and etc. I used 1 file from IMDb and 1 file from The Numbers to answer the question of which genres were most successful, mainly focusing on the Domestic and Worldwide Gross sales along with budget.
 
-### Business Problem
+  After cleaning the information on each table such as column names and missing data, I joined the two datasets with a shared field, budgets_df3 and movie_basics_df together using the 'Movie Name' column as it was a unique identifier creating a new dataframe called final_df. However, I created a final_df2 and final_df3 where median ROIs for both domestic and worldwide levels, respectively, are filtered and refined for plotting. 
+***
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+## Results
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+  The first few plots depict the median ROIs on both scopes, as well as the average Worldwide ROI by genre, which we later refined our analysis view to. All three plots support that Adventure films are the best type to begin creating among the top four mentioned earlier, with Comedy coming in second, as measured through this analysis. This would also invite conversations of merging the two genres, given the dataset initially had multiple genres. 
 
-### The Data
+  The next few visuals - the boxplot and multiple regression plots - exhibit how production budgets vary among the top four genres, and the bar chart shows that the Adventure films in the dataset required $70 million for production, on average. However, I am suggesting a production budget between $100-140 million, in order to potentially generate four times the investment (at minimum a triple return on invesmtment).
 
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this assignment's GitHub repository. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
+  The final boxplot statistically, and visually, breaks down the runtime among the top four genres. A runtime between 95-110 minutes would be best for this initial project, which would cover the 75th percentile of Adventure films as well as Comedy films if we were to further suggest merging genres for the screenplay, as mentioned earlier. 
 
-It is up to you to decide what data from this dataset to use and how to use it. **If you are feeling overwhelmed or behind**, we recommend you **ignore** some or all of the following features:
+To improve confidence in the results next time I would:
 
-* `date`
-* `view`
-* `sqft_above`
-* `sqft_basement`
-* `yr_renovated`
-* `address`
-* `lat`
-* `long`
+  Include the movie ratings and refine to include multiple genre characterizations in order to give a clear, more comprehensive picture of the dataset. In addition, research when might be the best time to release to give a refined projection/plan.
 
-### Key Points
+***
 
-* **Your goal in regression modeling is to yield findings to support relevant recommendations. Those findings should include a metric describing overall model performance as well as at least two regression model coefficients.** As you explore the data and refine your stakeholder and business problem definitions, make sure you are also thinking about how a linear regression model adds value to your analysis. "The assignment was to use linear regression" is not an acceptable answer! You can also use additional statistical techniques other than linear regression, so long as you clearly explain why you are using each technique.
 
-* **You should demonstrate an iterative approach to modeling.** This means that you must build multiple models. Begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs in the notebook discussing your final model.
 
-* **Data visualization and analysis are still very important.** In Phase 1, your project stopped earlier in the CRISP-DM process. Now you are going a step further, to modeling. Data visualization and analysis will help you build better models and tell a better story to your stakeholders.
+## Conclusions
 
-## Deliverables
+This analysis leads to three recommendations regarding types of movies that are best to begin creating:
 
-There are three deliverables for this project:
+1. START WITH ADVENTURE-COMEDY FILMS. Adventure films generate the highest median worldwide return on investment, among the top four genres. We focused our analysis to those four genres due to a lack of records for the other genres, and their susceptibility to outliers (e.g., low budget films that found major success), to confidently include them in the analysis. As such, Adventure films were the best choice to begin with, and is estimated to produce both the highest median and average worldwide returns - suggesting the film will make enough to cover production costs and even generate profit. I would further suggest merging genres with Comedy for the screenplay, which will allow us to draw from different demographics and markets to gain success/following from. Therefore, an Adventure-Comedy film.
 
-* A **non-technical presentation**
-* A **Jupyter Notebook**
-* A **GitHub repository**
+<img src="images/average_worldwide_roi.png" alt="Production Budget by Genre">
+    
+2. BUDGET SUGGESTIONS. According to the average budget and Worldwide ROI visuals above, prepare to spend a minimum of $70 million on this film in order to double the return on investment. However, I am suggesting a budget plan between $100-140 million, in order to make, approximately, three times the budget at the minimum and a ceiling projected at quadruple the investment. 
 
-The deliverables requirements are almost the same as in the Phase 1 Project, and you can review those extended descriptions [here](https://github.com/learn-co-curriculum/dsc-phase-1-project-v2-5#deliverables).
+![Production Budget by Genre](images/budget_boxplot.png)
 
-### Non-Technical Presentation
+3. RUNTIME SUGGESTIONS. I am suggesting a minimum runtime of approximately 95 minutes for the Adventure film. However, if we follow my earlier suggestion regarding merging genres, an Adventure-Comedy film would require a runtime between 95-110 minutes. 
 
-Recall that the non-technical presentation is a slide deck presenting your analysis to ***business stakeholders***, and should be presented live as well as submitted in PDF form on Canvas.
+![Runtime by Genre](images/runtime_boxplot.png)
 
-We recommend that you follow this structure, although the slide titles should be specific to your project:
+***
 
-1. Beginning
-    - Overview
-    - Business and Data Understanding
-2. Middle
-    - **Modeling**
-    - **Regression Results**
-3. End
-    - Recommendations
-    - Next Steps
-    - Thank you
 
-Make sure that your discussion of modeling and regression results is geared towards a non-technical audience! Assume that their prior knowledge of regression modeling is minimal. You don't need to explain how linear regression works, but you should explain why linear regression is useful for the problem context. Make sure you translate any metrics or coefficients into their plain language implications.
 
-The graded elements for the non-technical presentation are the same as in [Phase 1](https://github.com/learn-co-curriculum/dsc-phase-1-project-v2-5#deliverables).
 
-### Jupyter Notebook
 
-Recall that the Jupyter Notebook is a notebook that uses Python and Markdown to present your analysis to a ***data science audience***. You will submit the notebook in PDF format on Canvas as well as in `.ipynb` format in your GitHub repository.
+## Repository Contents
+***
+Below is a list of the contents of this repository.
 
-The graded elements for the Jupyter Notebook are:
-
-* Business Understanding
-* Data Understanding
-* Data Preparation
-* **Modeling**
-* **Regression Results**
-* Code Quality
-
-### GitHub Repository
-
-Recall that the GitHub repository is the cloud-hosted directory containing all of your project files as well as their version history.
-
-The requirements are the same as in [Phase 1](https://github.com/learn-co-curriculum/dsc-phase-1-project-v2-5#github-repository), except for the required sections in the `README.md`.
-
-For this project, the `README.md` file should contain:
-
-* Overview
-* Business and Data Understanding
-  * Explain your stakeholder audience here
-* **Modeling**
-* **Regression Results**
-* Conclusion
-
-Just like in Phase 1, the `README.md` file should be the bridge between your non technical presentation and the Jupyter Notebook. It should not contain the code used to develop your analysis, but should provide a more in-depth explanation of your methodology and analysis than what is described in your presentation slides.
-
-## Grading
-
-***To pass this project, you must pass each project rubric objective.*** The project rubric objectives for Phase 2 are:
-
-1. Attention to Detail
-2. Statistical Communication
-3. Data Preparation Fundamentals
-4. Linear Modeling
-
-### Attention to Detail
-
-Just like in Phase 1, this rubric objective is based on your completion of checklist items. ***In Phase 2, you need to complete 70% (7 out of 10) or more of the checklist elements in order to pass the Attention to Detail objective.***
-
-**NOTE THAT THE PASSING BAR IS HIGHER IN PHASE 2 THAN IT WAS IN PHASE 1!**
-
-The standard will increase with each Phase, until you will be required to complete all elements to pass Phase 5 (Capstone).
-
-#### Exceeds Objective
-
-80% or more of the project checklist items are complete
-
-#### Meets Objective (Passing Bar)
-
-70% of the project checklist items are complete
-
-#### Approaching Objective
-
-60% of the project checklist items are complete
-
-#### Does Not Meet Objective
-
-50% or fewer of the project checklist items are complete
-
-### Statistical Communication
-
-Recall that communication is one of the key data science "soft skills". In Phase 2, we are specifically focused on Statistical Communication. We define Statistical Communication as:
-
-> Communicating **results of statistical analyses** to diverse audiences via writing and live presentation
-
-Note that this is the same as in Phase 1, except we are replacing "basic data analysis" with "statistical analyses".
-
-High-quality Statistical Communication includes rationale, results, limitations, and recommendations:
-
-* **Rationale:** Explaining why you are using statistical analyses rather than basic data analysis
-  * For example, why are you using regression coefficients rather than just a graph?
-  * What about the problem or data is suitable for this form of analysis?
-  * For a data science audience, this includes your reasoning for the changes you applied while iterating between models.
-* **Results:** Describing the overall model metrics and feature coefficients
-  * You need at least one overall model metric (e.g. r-squared or RMSE) and at least two feature coefficients.
-  * For a business audience, make sure you connect any metrics to real-world implications. You do not need to get into the details of how linear regression works.
-  * For a data science audience, you don't need to explain what a metric is, but make sure you explain why you chose that particular one.
-* **Limitations:** Identifying the limitations and/or uncertainty present in your analysis
-  * This could include p-values/alpha values, confidence intervals, assumptions of linear regression, missing data, etc.
-  * In general, this should be more in-depth for a data science audience and more surface-level for a business audience.
-* **Recommendations:** Interpreting the model results and limitations in the context of the business problem
-  * What should stakeholders _do_ with this information?
-
-#### Exceeds Objective
-
-Communicates the rationale, results, limitations, and specific recommendations of statistical analyses
-
-> See above for extended explanations of these terms.
-
-#### Meets Objective (Passing Bar)
-
-Successfully communicates the results of statistical analyses without any major errors
-
-> The minimum requirement is to communicate the _results_, meaning at least one overall model metric (e.g. r-squared or RMSE) as well as at least two feature coefficients. See the Approaching Objective section for an explanation of what a "major error" means.
-
-#### Approaching Objective
-
-Communicates the results of statistical analyses with at least one major error
-
-> A major error means that some aspect of your explanation is fundamentally incorrect. For example, if a feature coefficient is negative and you say that an increase in that feature results in an increase of the target, that would be a major error. Another example would be if you say that the feature with the highest coefficient is the "most statistically significant" while ignoring the p-value. One more example would be reporting a coefficient that is not statistically significant, rather than saying "no statistically significant linear relationship was found"
-
-> "**If a coefficient's t-statistic is not significant, don't interpret it at all.** You can't be sure that the value of the corresponding parameter in the underlying regression model isn't really zero." _DeVeaux, Velleman, and Bock (2012), Stats: Data and Models, 3rd edition, pg. 801_. Check out [this website](https://web.ma.utexas.edu/users/mks/statmistakes/TOC.html) for extensive additional examples of mistakes using statistics.
-
-> The easiest way to avoid making a major error is to have someone double-check your work. Reach out to peers on Slack and ask them to confirm whether your interpretation makes sense!
-
-#### Does Not Meet Objective
-
-Does not communicate the results of statistical analyses
-
-> It is not sufficient to just display the entire results summary. You need to pull out at least one overall model metric (e.g. r-squared, RMSE) and at least two feature coefficients, and explain what those numbers mean.
-
-### Data Preparation Fundamentals
-
-We define this objective as:
-
-> Applying appropriate **preprocessing** and feature engineering steps to tabular data in preparation for statistical modeling
-
-The two most important components of preprocessing for the Phase 2 project are:
-
-* **Handling Missing Values:** Missing values may be present in the features you want to use, either encoded as `NaN` or as some other value such as `"?"`. Before you can build a linear regression model, make sure you identify and address any missing values using techniques such as dropping or replacing data.
-* **Handling Non-Numeric Data:** A linear regression model needs all of the features to be numeric, not categorical. For this project, ***be sure to pick at least one non-numeric feature and try including it in a model.*** You can identify that a feature is currently non-numeric if the type is `object` when you run `.info()` on your dataframe. Once you have identified the non-numeric features, address them using techniques such as ordinal or one-hot (dummy) encoding.
-
-There is no single correct way to handle either of these situations! Use your best judgement to decide what to do, and be sure to explain your rationale in the Markdown of your notebook.
-
-Feature engineering is encouraged but not required for this project.
-
-#### Exceeds Objective
-
-Goes above and beyond with data preparation, such as feature engineering or merging in outside datasets
-
-> One example of feature engineering could be using the `date` feature to create a new feature called `season`, which represents whether the home was sold in Spring, Summer, Fall, or Winter.
-
-> One example of merging in outside datasets could be finding data based on ZIP Code, such as household income or walkability, and joining that data with the provided CSV.
-
-#### Meets Objective (Passing Bar)
-
-Successfully prepares data for modeling, including converting at least one non-numeric feature into ordinal or binary data and handling missing data as needed
-
-> As a reminder, you can identify the non-numeric features by calling `.info()` on the dataframe and looking for type `object`.
-
-> Your final model does not necessarily need to include any features that were originally non-numeric, but you need to demonstrate your ability to handle this type of data.
-
-#### Approaching Objective
-
-Prepares some data successfully, but is unable to utilize non-numeric data
-
-> If you simply subset the dataframe to only columns with type `int64` or `float64`, your model will run, but you will not pass this objective.
-
-#### Does Not Meet Objective
-
-Does not prepare data for modeling
-
-### Linear Modeling
-
-According to [Kaggle's 2020 State of Data Science and Machine Learning Survey](https://www.kaggle.com/kaggle-survey-2020), linear and logistic regression are the most popular machine learning algorithms, used by 83.7% of data scientists. They are small, fast models compared to some of the models you will learn later, but have limitations in the kinds of relationships they are able to learn.
-
-In this project you are required to use linear regression as the primary statistical analysis, although you are free to use additional statistical techniques as appropriate.
-
-#### Exceeds Objective
-
-Goes above and beyond in the modeling process, such as recursive feature selection
-
-#### Meets Objective (Passing Bar)
-
-Successfully builds a baseline model as well as at least one iterated model, and correctly extracts insights from a final model without any major errors
-
-> We are looking for you to (1) create a baseline model, (2) iterate on that model, making adjustments that are supported by regression theory or by descriptive analysis of the data, and (3) select a final model and report on its metrics and coefficients
-
-> Ideally you would include written justifications for each model iteration, but at minimum the iterations must be _justifiable_
-
-> For an explanation of "major errors", see the description below
-
-#### Approaching Objective
-
-Builds multiple models with at least one major error
-
-> The number one major error to avoid is including the target as one of your features. For example, if the target is `price` you should NOT make a "price per square foot" feature, because that feature would not be available if you didn't already know the price.
-
-> Other examples of major errors include: using a target other than `price`, attempting only simple linear regression (not multiple linear regression), dropping multiple one-hot encoded columns without explaining the resulting baseline, or using a unique identifier (`id` in this dataset) as a feature.
-
-#### Does Not Meet Objective
-
-Does not build multiple linear regression models
-
-## Getting Started
-
-Please start by reviewing the contents of this project description. If you have any questions, please ask your instructor ASAP.
-
-Next, you will need to complete the [***Project Proposal***](#project_proposal) which must be reviewed by your instructor before you can continue with the project.
-
-Here are some suggestions for creating your GitHub repository:
-
-1. Fork the [Phase 2 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-2-project-v2-5), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
-2. Or, create a new repository from scratch by going to [github.com/new](https://github.com/new) and copying the data files from the Phase 2 Project Repository into your new repository.
-   - Recall that you can refer to the [Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template) as an example structure
-   - This option will result in the most professional-looking portfolio repository, but can be more complicated to use. So if you are getting stuck with this option, try forking the project repository instead
-
-## Summary
-
-This is your first modeling project! Take what you have learned in Phase 2 to create a project with a more sophisticated analysis than you completed in Phase 1. You will build on these skills as we move into the predictive machine learning mindset in Phase 3. You've got this!
+```
+├── README.md             
+├── images   
+├── .gitignore         
+├── KingCountyHousingDataAnalysis.ipynb                               
+└── King County Housing Data Analysis.pdf                         
+```
