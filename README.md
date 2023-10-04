@@ -1,7 +1,6 @@
 # King County Housing Data Analysis
 
-**Author**: Andre Layton
-
+**Author**: Andre Layton  
 GitHub: @therookiescientist-andre
 
 ## Overview
@@ -38,9 +37,9 @@ The heatmap shows that the size of the living room (in square feet) is the featu
   
   ![Heating Sources vs. average sales price](images/heatsources.png)
 
-  Gas-powered homes were valued at a higher price, on average, while electric-powered homes were valued the lowest, on average, and well below the dataset's mean, depicted by the horizontal line. The model explains about 3% of the variance in the sales price, which is quite small; however, the impact of the sales price depending on the heating source is the more important objective. The model suggests that, when compared to electric-powered homes, the home's sales price increases by \\$180,400 for gas-powered homes and \\$33,660 for oil-powered homes. 
+  Gas-powered homes were valued at a higher price, on average, while electric-powered homes were valued the lowest, on average, and well below the dataset's mean, depicted by the horizontal line. The model explains about 3% of the variance in the sales price, which is quite small; however, the impact of the sales price depending on the heating source is the more important objective. The model suggests that, when compared to electric-powered homes, the home's sales price increases by $180,400 for gas-powered homes and $33,660 for oil-powered homes. 
   
-  The last few visuals model all the individual predictors together, in order to achieve model improvement and observe what impact the predictors have on the sales price when factored in, completely. The model shows an improvement in the adjusted R-squared statistic (a value of 0.319) and statistically significant coefficients. The mean absolute error is \\$279,238, which is how much our model is off by in any given prediction. 
+  The last few visuals model all the individual predictors together, in order to achieve model improvement and observe what impact the predictors have on the sales price when factored in, completely. The model shows an improvement in the adjusted R-squared statistic (a value of 0.319) and statistically significant coefficients. The mean absolute error is $279,238, which is how much our model is off by in any given prediction. 
 
 ***
 
@@ -48,11 +47,9 @@ The heatmap shows that the size of the living room (in square feet) is the featu
 
 ## Results & Conclusions
 
-This analysis leads to three recommendations regarding types of movies that are best to begin creating:
-
 This analysis leads to the following conclusions:
 
-1. Keller Williams should focus on renovating the living room, specifically by changing the square footage, or changing the heat source that powers the home. Each square foot that gets added to the living room is projected to increase the price of the home by $302. Increasing the square footage of the living room is confirmed to have the greatest impact to the sales price of the home, but is collinear with many other features and must, therefore, be modeled with a few select predictors.
+1. Keller Williams should focus on renovating the living room, specifically by changing the size/square footage, and changing the heat source that powers the home. Each square foot that gets added to the living room is projected to increase the price of the home by $302. Increasing the square footage of the living room is confirmed to have the greatest impact to the sales price of the home, but is collinear with many other features and must, therefore, be modeled with a few select predictors.
 
 2. I recommend renovating any homes acquired in this Pacific Northwest region to a gas-powered home, which is shown to have a higher sales price average, as well as increase the sales price, on average, by $97,000, which is the highest among the heating sources present in the model.
 
@@ -75,5 +72,5 @@ Below is a list of the contents of this repository.
 ├── images   
 ├── .gitignore         
 ├── KingCountyHousingDataAnalysis.ipynb                               
-└── King County Real Estate Analysis.pdf                         
+└── KingCountyRealEstateAnalysis.pdf                         
 ```
