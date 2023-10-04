@@ -70,7 +70,9 @@ Below is a list of the contents of this repository.
 ```
 ├── README.md             
 ├── images   
-├── .gitignore         
+├── .gitignore
+├── CONTRIBUTING.md   
+├── LICENSE.md
 ├── KingCountyHousingDataAnalysis.ipynb                               
 └── KingCountyRealEstateAnalysis.pdf                         
 ```
