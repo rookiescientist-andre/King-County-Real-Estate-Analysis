@@ -24,37 +24,41 @@ GitHub: @therookiescientist-andre
 The heatmap shows that the size of the living room (in square feet) is the feature that is highly correlated with sales price, and is a predictor worth exploring. The business problem initially has interest in the homes' heat sources, which adds another feature to the project.   
 ***
 
-## Results
+## Modeling
 
-  The first few plots depict the median ROIs on both scopes, as well as the average Worldwide ROI by genre, which we later refined our analysis view to. All three plots support that Adventure films are the best type to begin creating among the top four mentioned earlier, with Comedy coming in second, as measured through this analysis. This would also invite conversations of merging the two genres, given the dataset initially had multiple genres. 
+  The first few plots explore a simple linear regression model between the size of the living room (in sq. ft.) and the sales price of the home. After dropping the outliers using the interquartile range (IQR) method, we plot the data along with a best-fit line to observe the effect our predictor has on the target. 
+  
+  ![Sq. Ft. of living room vs. sales price](images/sqft_reg.png)
+  
+  The visual above shows that there is a strong linear relationship between the size of the living room and the sales price of the home. The model's adjusted R-squared statistic is .318 - in other words, the size of the living room explains about 32% of the variance in the sales price. The residuals are also plotted, as shown below, and exhibit a semblance of a normal distribution, which confirms that no assumptions were violated. 
 
-  The next few visuals - the boxplot and multiple regression plots - exhibit how production budgets vary among the top four genres, and the bar chart shows that the Adventure films in the dataset required $70 million for production, on average. However, I am suggesting a production budget between $100-140 million, in order to potentially generate four times the investment (at minimum a triple return on invesmtment).
+  ![Residuals visual](images/sqft_resid.png)
 
-  The final boxplot statistically, and visually, breaks down the runtime among the top four genres. A runtime between 95-110 minutes would be best for this initial project, which would cover the 75th percentile of Adventure films as well as Comedy films if we were to further suggest merging genres for the screenplay, as mentioned earlier. 
+  The next few visuals take a look into the heating sources and their impact on the sales price of the home. This data takes a different process due to its categorical nature, so a visual of the data's distribution is important. The first plot is a bar graph showing the average sales prices for each heating source.
+  
+  ![Heating Sources vs. average sales price](images/heatsources.png)
 
-To improve confidence in the results next time I would:
-
-  Include the movie ratings and refine to include multiple genre characterizations in order to give a clear, more comprehensive picture of the dataset. In addition, research when might be the best time to release to give a refined projection/plan.
+  Gas-powered homes were valued at a higher price, on average, while electric-powered homes were valued the lowest, on average, and well below the dataset's mean, depicted by the horizontal line. The model explains about 3% of the variance in the sales price, which is quite small; however, the impact of the sales price depending on the heating source is the more important objective. The model suggests that, when compared to electric-powered homes, the home's sales price increases by \\$180,400 for gas-powered homes and \\$33,660 for oil-powered homes. 
+  
+  The last few visuals model all the individual predictors together, in order to achieve model improvement and observe what impact the predictors have on the sales price when factored in, completely. The model shows an improvement in the adjusted R-squared statistic (a value of 0.319) and statistically significant coefficients. The mean absolute error is \\$279,238, which is how much our model is off by in any given prediction. 
 
 ***
 
 
 
-## Conclusions
+## Results & Conclusions
 
 This analysis leads to three recommendations regarding types of movies that are best to begin creating:
 
-1. START WITH ADVENTURE-COMEDY FILMS. Adventure films generate the highest median worldwide return on investment, among the top four genres. We focused our analysis to those four genres due to a lack of records for the other genres, and their susceptibility to outliers (e.g., low budget films that found major success), to confidently include them in the analysis. As such, Adventure films were the best choice to begin with, and is estimated to produce both the highest median and average worldwide returns - suggesting the film will make enough to cover production costs and even generate profit. I would further suggest merging genres with Comedy for the screenplay, which will allow us to draw from different demographics and markets to gain success/following from. Therefore, an Adventure-Comedy film.
+This analysis leads to the following conclusions:
 
-<img src="images/average_worldwide_roi.png" alt="Production Budget by Genre">
-    
-2. BUDGET SUGGESTIONS. According to the average budget and Worldwide ROI visuals above, prepare to spend a minimum of $70 million on this film in order to double the return on investment. However, I am suggesting a budget plan between $100-140 million, in order to make, approximately, three times the budget at the minimum and a ceiling projected at quadruple the investment. 
+1. Keller Williams should focus on renovating the living room, specifically by changing the square footage, or changing the heat source that powers the home. Each square foot that gets added to the living room is projected to increase the price of the home by $302. Increasing the square footage of the living room is confirmed to have the greatest impact to the sales price of the home, but is collinear with many other features and must, therefore, be modeled with a few select predictors.
 
-![Production Budget by Genre](images/budget_boxplot.png)
+2. I recommend renovating any homes acquired in this Pacific Northwest region to a gas-powered home, which is shown to have a higher sales price average, as well as increase the sales price, on average, by $97,000, which is the highest among the heating sources present in the model.
 
-3. RUNTIME SUGGESTIONS. I am suggesting a minimum runtime of approximately 95 minutes for the Adventure film. However, if we follow my earlier suggestion regarding merging genres, an Adventure-Comedy film would require a runtime between 95-110 minutes. 
+This project is limited in a few ways, the first being it only takes into account housing data within the upper and lower bounds of the dataset. However, if we were to include those high values and outliers, the results might show a higher variance in the price, a better model, and a lower mean absolute error. In addition, the dataset had limited features available that correlated well with price and not with one another.
 
-![Runtime by Genre](images/runtime_boxplot.png)
+Further analyses could yield additional insights to which features and/or renovations are best to impact the sales price of the homes in the Pacific Northwest region. One such improvement is including location into the project to see the impact area has on price. Also, include more features to explore other predictors that may correlate better with the sales price of the home.
 
 ***
 
