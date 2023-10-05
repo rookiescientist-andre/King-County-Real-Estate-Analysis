@@ -1,4 +1,4 @@
-# King County Housing Data Analysis
+# King County Real Estate Analysis
 
 **Author**: Andre Layton  
 GitHub: @therookiescientist-andre
