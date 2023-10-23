@@ -27,15 +27,15 @@ The heatmap shows that the size of the living space (in square feet) is the feat
 
   The first few plots explore a simple linear regression model between the size of the living space (in sq. ft.) and the sales price of the home. After dropping the outliers using the interquartile range (IQR) method, we plot the data along with a best-fit line to observe the effect our predictor has on the target. 
   
-  ![Sq. Ft. of living space vs. sales price](images/sqft_reg.png)
+  ![Sq. Ft. of living space vs. sales price](images/living_space_regression.png)
   
   The visual above shows that there is a strong linear relationship between the size of the living space and the sales price of the home. The model's adjusted R-squared statistic is .318 - in other words, the size of the living space explains about 32% of the variance in the sales price. The residuals are also plotted, as shown below, and exhibit a semblance of a normal distribution, which confirms that no assumptions were violated. 
 
-  ![Residuals visual](images/sqft_resid.png)
+  ![Residuals visual](images/living_space_resid.png)
 
   The next few visuals take a look into the heating sources and their impact on the sales price of the home. This data takes a different process due to its categorical nature, so a visual of the data's distribution is important. The first plot is a bar graph showing the median sales prices for each heating source.
   
-  ![Heating Sources vs. median sales price](images/heatsources.png)
+  ![Heating Sources vs. median sales price](images/heat_sources_barchart.png)
 
   Median gas-powered homes were much higher than electric-powered homes, as well as oil. The model explains about 3% of the variance in the sales price, which is quite small. This inspires little confidence in the results and any interpretations to the relationship between both variables The model suggests that, when compared to electric-powered homes, the home's sales price is estimated to increase by $180,400 for gas-powered homes and $33,660 for oil-powered homes. 
   
