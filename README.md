@@ -71,6 +71,6 @@ Below is a list of the contents of this repository.
 ├── README.md             
 ├── images   
 ├── .gitignore
-├── RealEstateAnalysis.ipynb                               
+├── Real_Estate_Analysis.ipynb                               
 └── Presentation.pdf                         
 ```
