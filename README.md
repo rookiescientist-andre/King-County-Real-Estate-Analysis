@@ -71,6 +71,6 @@ Below is a list of the contents of this repository.
 ├── README.md             
 ├── images   
 ├── .gitignore
-├── KingCountyHousingDataAnalysis.ipynb                               
-└── KingCountyRealEstateAnalysis.pdf                         
+├── RealEstateAnalysis.ipynb                               
+└── Presentation.pdf                         
 ```
